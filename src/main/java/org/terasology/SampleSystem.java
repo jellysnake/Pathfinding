@@ -19,8 +19,6 @@ import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.logic.inventory.InventoryComponent;
-import org.terasology.logic.players.event.OnPlayerSpawnedEvent;
 import org.terasology.logic.selection.ApplyBlockSelectionEvent;
 import org.terasology.math.geom.Vector3i;
 import org.terasology.registry.In;
@@ -28,19 +26,12 @@ import org.terasology.world.WorldProvider;
 import org.terasology.world.block.Block;
 import org.terasology.world.block.BlockManager;
 
-/**
- * @author synopia
- */
 @RegisterSystem
 public class SampleSystem extends BaseComponentSystem {
     @In
     private WorldProvider worldProvider;
     @In
     private BlockManager blockManager;
-
-    @ReceiveEvent
-    public void onPlayerSpawn(OnPlayerSpawnedEvent event, EntityRef player, InventoryComponent inventory) {
-    }
 
     @ReceiveEvent
     public void onSelection(ApplyBlockSelectionEvent event, EntityRef entity) {
